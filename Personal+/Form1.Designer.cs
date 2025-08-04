@@ -68,6 +68,8 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -418,6 +420,7 @@
             // 
             // listBox4
             // 
+            this.listBox4.DisplayMember = "DisplayName";
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 20;
             this.listBox4.Location = new System.Drawing.Point(604, 308);
@@ -425,13 +428,38 @@
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(958, 744);
             this.listBox4.TabIndex = 36;
-            // 
+            this.listBox4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox4_MouseDoubleClick);
+            //
+            // btnBack
+            //
+            this.btnBack.Location = new System.Drawing.Point(604, 272);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(40, 29);
+            this.btnBack.TabIndex = 37;
+            this.btnBack.Text = "<-";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            //
+            // btnForward
+            //
+            this.btnForward.Location = new System.Drawing.Point(652, 272);
+            this.btnForward.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 29);
+            this.btnForward.TabIndex = 38;
+            this.btnForward.Text = "->";
+            this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(2073, 1071);
+            this.Controls.Add(this.btnForward);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
@@ -521,6 +549,8 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnForward;
     }
 }
 
