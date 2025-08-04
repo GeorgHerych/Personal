@@ -49,15 +49,15 @@ namespace Personal_
             throw new NotImplementedException();
         }
 
-        private Task<bool> AuthenticateAsync(string login, string pass)
+        private async Task<bool> AuthenticateAsync(string login, string pass)
         {
-            return Task.Run(() =>
-            {
-                using var db = new AppDbContext();
-                var user = db.Users.FirstOrDefault(u => u.Login == login && u.Password == pass);
-                if (user == null) return false;
-                return BCrypt.Net.BCrypt.Verify(pass, user.Password);
-            });
+            using var db = new AppDbContext();
+
+            // Retrieve the user by login and validate the hashed password
+            var user = await db.Users.FirstOrDefaultAsync(u => u.Login == login);
+            if (user == null) return false;
+
+            return BCrypt.Net.BCrypt.Verify(pass, user.Password);
         }
         private void RememberMe_CheckedChanged(object sender, EventArgs e)
         {
