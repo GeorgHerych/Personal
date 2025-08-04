@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Personal_
 {
@@ -18,6 +19,42 @@ namespace Personal_
         private Stack<string> forwardHistory = new Stack<string>();
         private string currentPath;
         private ImageList imageList = new ImageList();
+
+        [DllImport("Shell32.dll", CharSet = CharSet.Auto)]
+        private static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbFileInfo, uint uFlags);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern bool DestroyIcon(IntPtr handle);
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        private struct SHFILEINFO
+        {
+            public IntPtr hIcon;
+            public int iIcon;
+            public uint dwAttributes;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+            public string szDisplayName;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
+            public string szTypeName;
+        }
+
+        private const uint SHGFI_ICON = 0x000000100;
+        private const uint SHGFI_LARGEICON = 0x000000000;
+        private const uint FILE_ATTRIBUTE_DIRECTORY = 0x00000010;
+        private const uint FILE_ATTRIBUTE_NORMAL = 0x00000080;
+
+        private Icon GetIcon(string path, bool isDirectory)
+        {
+            SHFILEINFO shinfo = new SHFILEINFO();
+            uint flags = SHGFI_ICON | SHGFI_LARGEICON;
+            uint attr = isDirectory ? FILE_ATTRIBUTE_DIRECTORY : FILE_ATTRIBUTE_NORMAL;
+            IntPtr hImg = SHGetFileInfo(path, attr, ref shinfo, (uint)Marshal.SizeOf(shinfo), flags);
+            if (hImg == IntPtr.Zero)
+                return SystemIcons.WinLogo;
+            Icon icon = (Icon)Icon.FromHandle(shinfo.hIcon).Clone();
+            DestroyIcon(shinfo.hIcon);
+            return icon;
+        }
 
         private class FileItem
         {
@@ -102,16 +139,15 @@ namespace Personal_
             imageList.Images.Clear();
             foreach (var drive in DriveInfo.GetDrives())
             {
-                try
+                var displayName = string.IsNullOrEmpty(drive.VolumeLabel)
+                    ? drive.Name
+                    : $"{drive.VolumeLabel} ({drive.Name.TrimEnd('\\')})";
+                var icon = GetIcon(drive.Name, true);
+                if (!imageList.Images.ContainsKey(drive.Name))
+                    imageList.Images.Add(drive.Name, icon);
+                var item = new ListViewItem(displayName)
                 {
-                    var icon = Icon.ExtractAssociatedIcon(drive.Name);
-                    if (icon != null && !imageList.Images.ContainsKey(drive.Name))
-                        imageList.Images.Add(drive.Name, icon);
-                }
-                catch { }
-                var item = new ListViewItem(drive.Name)
-                {
-                    Tag = new FileItem { DisplayName = drive.Name, Path = drive.Name, IsDirectory = true },
+                    Tag = new FileItem { DisplayName = displayName, Path = drive.Name, IsDirectory = true },
                     ImageKey = drive.Name
                 };
                 listView1.Items.Add(item);
@@ -130,13 +166,9 @@ namespace Personal_
                 if (dir.Parent != null)
                 {
                     var parentPath = dir.Parent.FullName;
-                    try
-                    {
-                        var pIcon = Icon.ExtractAssociatedIcon(parentPath);
-                        if (pIcon != null && !imageList.Images.ContainsKey(parentPath))
-                            imageList.Images.Add(parentPath, pIcon);
-                    }
-                    catch { }
+                    var pIcon = GetIcon(parentPath, true);
+                    if (!imageList.Images.ContainsKey(parentPath))
+                        imageList.Images.Add(parentPath, pIcon);
                     var parentItem = new ListViewItem("..")
                     {
                         Tag = new FileItem { DisplayName = "..", Path = parentPath, IsDirectory = true },
@@ -146,13 +178,9 @@ namespace Personal_
                 }
                 foreach (var subDir in dir.GetDirectories())
                 {
-                    try
-                    {
-                        var dIcon = Icon.ExtractAssociatedIcon(subDir.FullName);
-                        if (dIcon != null && !imageList.Images.ContainsKey(subDir.FullName))
-                            imageList.Images.Add(subDir.FullName, dIcon);
-                    }
-                    catch { }
+                    var dIcon = GetIcon(subDir.FullName, true);
+                    if (!imageList.Images.ContainsKey(subDir.FullName))
+                        imageList.Images.Add(subDir.FullName, dIcon);
                     var dirItem = new ListViewItem(subDir.Name)
                     {
                         Tag = new FileItem { DisplayName = subDir.Name, Path = subDir.FullName, IsDirectory = true },
@@ -162,13 +190,9 @@ namespace Personal_
                 }
                 foreach (var file in dir.GetFiles())
                 {
-                    try
-                    {
-                        var fIcon = Icon.ExtractAssociatedIcon(file.FullName);
-                        if (fIcon != null && !imageList.Images.ContainsKey(file.FullName))
-                            imageList.Images.Add(file.FullName, fIcon);
-                    }
-                    catch { }
+                    var fIcon = GetIcon(file.FullName, false);
+                    if (!imageList.Images.ContainsKey(file.FullName))
+                        imageList.Images.Add(file.FullName, fIcon);
                     var fileItem = new ListViewItem(file.Name)
                     {
                         Tag = new FileItem { DisplayName = file.Name, Path = file.FullName, IsDirectory = false },
