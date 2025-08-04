@@ -17,7 +17,7 @@ namespace Personal_
         {
             try
             {
-                SeedData.EnsureAdminExists();
+                SeedData.SeedUsers();
             }
             catch (Exception ex)
             {

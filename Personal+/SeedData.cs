@@ -8,34 +8,33 @@ namespace Personal_
 {
     public class SeedData
     {
-        public static void EnsureAdminExists()
+        public static void SeedUsers()
         {
-            using var db = new AppDbContext();
-            if (!db.Users.Any(u => u.Login == "admin"))
-            {
-                var hash = BCrypt.Net.BCrypt.HashPassword("Assasin123");
-                db.Users.Add(new User
-                {
-                    Login = "admin",
-                    Password = hash,
-                    IsActive = true,
-                });
-                db.SaveChanges();
-            }
+            CreateUser("dina", "dina123");
+            CreateUser("oksana", "oksana123");
+            CreateUser("sasha", "sasha123");
+            CreateUser("zhenya", "zhenya123");
+            CreateUser("vitalik", "vitalik123");
+            CreateUser("stas", "stas123");
+            CreateUser("yura", "admin123", true);
         }
 
-        public static void CreateUsar(string login, string plainPassword) {
-            using var db = new AppDbContext();
-            if (!db.Users.Any(u => u.Login == login))
+        private static void CreateUser(string login, string plainPassword, bool isAdmin = false)
+        {
+            using (var db = new AppDbContext())
             {
-                var hash = BCrypt.Net.BCrypt.HashPassword(plainPassword);
-                db.Users.Add(new User
+                if (!db.Users.Any(u => u.Login == login))
                 {
-                    Login = login,
-                    Password = hash,
-                    IsActive = true,
-                });
-                db.SaveChanges();
+                    var hash = BCrypt.Net.BCrypt.HashPassword(plainPassword);
+                    db.Users.Add(new User
+                    {
+                        Login = login,
+                        Password = hash,
+                        IsActive = true,
+                        IsAdmin = isAdmin,
+                    });
+                    db.SaveChanges();
+                }
             }
         }
     }

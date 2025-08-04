@@ -32,6 +32,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Text_Login = new System.Windows.Forms.TextBox();
             this.Text_Pass = new System.Windows.Forms.TextBox();
+            this.btnShowPass = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Pass = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -69,6 +70,17 @@
             this.Text_Pass.Name = "Text_Pass";
             this.Text_Pass.Size = new System.Drawing.Size(229, 26);
             this.Text_Pass.TabIndex = 4;
+            this.Text_Pass.UseSystemPasswordChar = true;
+            //
+            // btnShowPass
+            //
+            this.btnShowPass.Location = new System.Drawing.Point(399, 189);
+            this.btnShowPass.Name = "btnShowPass";
+            this.btnShowPass.Size = new System.Drawing.Size(122, 26);
+            this.btnShowPass.TabIndex = 7;
+            this.btnShowPass.Text = "Показати";
+            this.btnShowPass.UseVisualStyleBackColor = true;
+            this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
             // 
             // label2
             // 
@@ -95,6 +107,7 @@
             this.ClientSize = new System.Drawing.Size(556, 364);
             this.Controls.Add(this.Pass);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnShowPass);
             this.Controls.Add(this.Text_Pass);
             this.Controls.Add(this.Text_Login);
             this.Controls.Add(this.checkBox1);
@@ -112,6 +125,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox Text_Login;
         private System.Windows.Forms.TextBox Text_Pass;
+        private System.Windows.Forms.Button btnShowPass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Pass;
     }
