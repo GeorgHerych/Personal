@@ -80,7 +80,10 @@ namespace Personal_
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            using (var form = new PersonnelForm())
+            {
+                form.ShowDialog();
+            }
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
