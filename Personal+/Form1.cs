@@ -78,7 +78,7 @@ namespace Personal_
             LoadDrives();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             using (var form = new PersonnelForm())
             {

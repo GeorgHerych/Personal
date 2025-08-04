@@ -306,7 +306,8 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "Штат";
             this.button2.UseVisualStyleBackColor = true;
-            // 
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            //
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1864, 552);
@@ -366,8 +367,7 @@
             this.button8.TabIndex = 30;
             this.button8.Text = "Щоденний звіт";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
+            //
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(1864, 948);
