@@ -67,7 +67,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -418,17 +418,17 @@
             this.listBox3.Size = new System.Drawing.Size(559, 184);
             this.listBox3.TabIndex = 35;
             // 
-            // listBox4
-            // 
-            this.listBox4.DisplayMember = "DisplayName";
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 20;
-            this.listBox4.Location = new System.Drawing.Point(604, 308);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(958, 744);
-            this.listBox4.TabIndex = 36;
-            this.listBox4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox4_MouseDoubleClick);
+            // listView1
+            //
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(604, 308);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(958, 744);
+            this.listView1.TabIndex = 36;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Tile;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             //
             // btnBack
             //
@@ -460,7 +460,7 @@
             this.ClientSize = new System.Drawing.Size(2073, 1071);
             this.Controls.Add(this.btnForward);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.listBox4);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -548,7 +548,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnForward;
     }
