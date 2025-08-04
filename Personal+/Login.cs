@@ -54,8 +54,11 @@ namespace Personal_
             return Task.Run(() =>
             {
                 using var db = new AppDbContext();
-                var user = db.Users.FirstOrDefault(u => u.Login == login && u.Password == pass);
-                if (user == null) return false;
+                var user = db.Users.FirstOrDefault(u => u.Login == login);
+                if (user == null)
+                {
+                    return false;
+                }
                 return BCrypt.Net.BCrypt.Verify(pass, user.Password);
             });
         }
