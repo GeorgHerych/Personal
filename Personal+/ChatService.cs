@@ -14,12 +14,14 @@ namespace Personal_
 
         public static void AddMessage(string sender, string text)
         {
-            messages.Add(new ChatMessage
+            var message = new ChatMessage
             {
                 Sender = sender,
                 Text = text,
                 Timestamp = DateTime.Now
-            });
+            };
+            message.ReadBy.Add(sender);
+            messages.Add(message);
         }
 
         public static void MarkAsRead(string user)

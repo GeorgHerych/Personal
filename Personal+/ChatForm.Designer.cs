@@ -35,10 +35,14 @@ namespace Personal_
             this.columnRead = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
+            this.imageListAvatars = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // listViewMessages
             // 
+            this.listViewMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnSender,
             this.columnText,
@@ -76,6 +80,8 @@ namespace Personal_
             // 
             // txtMessage
             // 
+            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMessage.Location = new System.Drawing.Point(12, 318);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(460, 26);
@@ -83,16 +89,24 @@ namespace Personal_
             // 
             // btnSend
             // 
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSend.Location = new System.Drawing.Point(478, 316);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(94, 29);
             this.btnSend.TabIndex = 2;
-            this.btnSend.Text = "Надіслати";
+            this.btnSend.Text = "Сповістити";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
+            //
+            // imageListAvatars
+            //
+            this.imageListAvatars.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageListAvatars.ImageSize = new System.Drawing.Size(32, 32);
+            this.imageListAvatars.TransparentColor = System.Drawing.Color.Transparent;
+            this.listViewMessages.SmallImageList = this.imageListAvatars;
+            //
             // ChatForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -101,11 +115,12 @@ namespace Personal_
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.listViewMessages);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.MaximizeBox = true;
             this.Name = "ChatForm";
-            this.Text = "Чат";
+            this.Text = "Сповіщення";
             this.Load += new System.EventHandler(this.ChatForm_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +135,6 @@ namespace Personal_
         private System.Windows.Forms.ColumnHeader columnRead;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.ImageList imageListAvatars;
     }
 }

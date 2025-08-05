@@ -32,6 +32,7 @@ namespace Personal_
                         Password = hash,
                         IsActive = true,
                         IsAdmin = isAdmin,
+                        AvatarPath = "images/logo.png",
                     });
                     db.SaveChanges();
                 }
