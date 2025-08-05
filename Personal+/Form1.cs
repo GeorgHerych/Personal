@@ -19,6 +19,8 @@ namespace Personal_
         private Stack<string> forwardHistory = new Stack<string>();
         private string currentPath;
         private ImageList imageList = new ImageList();
+        private float currentWidth;
+        private float currentHeight;
 
         [DllImport("Shell32.dll", CharSet = CharSet.Auto)]
         private static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbFileInfo, uint uFlags);
@@ -71,6 +73,21 @@ namespace Personal_
             imageList.ImageSize = new Size(32, 32);
             listView1.LargeImageList = imageList;
             listView1.TileSize = new Size(150, 36);
+
+            currentWidth = this.ClientSize.Width;
+            currentHeight = this.ClientSize.Height;
+            this.Resize += Form1_Resize;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (currentWidth == 0 || currentHeight == 0)
+                return;
+            float scaleX = (float)this.ClientSize.Width / currentWidth;
+            float scaleY = (float)this.ClientSize.Height / currentHeight;
+            this.Scale(new SizeF(scaleX, scaleY));
+            currentWidth = this.ClientSize.Width;
+            currentHeight = this.ClientSize.Height;
         }
 
         private void Form1_Load(object sender, EventArgs e)
