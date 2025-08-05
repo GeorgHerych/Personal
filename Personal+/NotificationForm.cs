@@ -11,8 +11,9 @@ namespace Personal_
             Text = $"Повідомлення від {sender}";
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterParent;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(800, 600);
+            MaximizeBox = false;
+            MinimizeBox = false;
 
             var pic = new PictureBox
             {

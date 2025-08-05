@@ -61,6 +61,10 @@ namespace Personal_
             this.Text = "Персонал";
             this.Width = 1200;
             this.Height = 700;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             txtSearch.SetBounds(10, 10, 200, 25);
             btnSearch.Text = "Пошук";
