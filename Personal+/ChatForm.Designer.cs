@@ -33,69 +33,84 @@ namespace Personal_
             this.columnText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRead = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panelInput = new System.Windows.Forms.Panel();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.imageListAvatars = new System.Windows.Forms.ImageList(this.components);
+            this.panelInput.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // listViewMessages
-            // 
-            this.listViewMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            //
             this.listViewMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnSender,
             this.columnText,
             this.columnTime,
             this.columnRead});
+            this.listViewMessages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewMessages.FullRowSelect = true;
             this.listViewMessages.GridLines = true;
             this.listViewMessages.HideSelection = false;
-            this.listViewMessages.Location = new System.Drawing.Point(12, 12);
+            this.listViewMessages.Location = new System.Drawing.Point(0, 0);
             this.listViewMessages.Name = "listViewMessages";
-            this.listViewMessages.Size = new System.Drawing.Size(560, 300);
+            this.listViewMessages.Size = new System.Drawing.Size(584, 311);
             this.listViewMessages.TabIndex = 0;
             this.listViewMessages.UseCompatibleStateImageBehavior = false;
             this.listViewMessages.View = System.Windows.Forms.View.Details;
-            // 
+            //
             // columnSender
-            // 
+            //
             this.columnSender.Text = "Від";
             this.columnSender.Width = 100;
-            // 
+            //
             // columnText
-            // 
+            //
             this.columnText.Text = "Повідомлення";
             this.columnText.Width = 240;
-            // 
+            //
             // columnTime
-            // 
+            //
             this.columnTime.Text = "Час";
             this.columnTime.Width = 120;
-            // 
+            //
             // columnRead
-            // 
+            //
             this.columnRead.Text = "Прочитано";
             this.columnRead.Width = 80;
-            // 
+            //
+            // panelInput
+            //
+            this.panelInput.Controls.Add(this.txtMessage);
+            this.panelInput.Controls.Add(this.btnSend);
+            this.panelInput.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInput.Location = new System.Drawing.Point(0, 311);
+            this.panelInput.Name = "panelInput";
+            this.panelInput.Padding = new System.Windows.Forms.Padding(8);
+            this.panelInput.Size = new System.Drawing.Size(584, 50);
+            this.panelInput.TabIndex = 1;
+            //
             // txtMessage
-            // 
-            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessage.Location = new System.Drawing.Point(12, 318);
+            //
+            this.txtMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMessage.Location = new System.Drawing.Point(8, 8);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(460, 26);
-            this.txtMessage.TabIndex = 1;
-            // 
+            this.txtMessage.Size = new System.Drawing.Size(468, 26);
+            this.txtMessage.TabIndex = 0;
+            //
             // btnSend
-            // 
-            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSend.Location = new System.Drawing.Point(478, 316);
+            //
+            this.btnSend.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSend.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.ForeColor = System.Drawing.Color.White;
+            this.btnSend.Location = new System.Drawing.Point(476, 8);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(94, 29);
-            this.btnSend.TabIndex = 2;
-            this.btnSend.Text = "Сповістити";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Size = new System.Drawing.Size(100, 34);
+            this.btnSend.TabIndex = 1;
+            this.btnSend.Text = "Надіслати";
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             //
             // imageListAvatars
@@ -111,18 +126,18 @@ namespace Personal_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.listViewMessages);
+            this.Controls.Add(this.panelInput);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.MaximizeBox = true;
             this.Name = "ChatForm";
-            this.Text = "Сповіщення";
+            this.Text = "Чат";
             this.Load += new System.EventHandler(this.ChatForm_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatForm_FormClosed);
+            this.panelInput.ResumeLayout(false);
+            this.panelInput.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -133,6 +148,7 @@ namespace Personal_
         private System.Windows.Forms.ColumnHeader columnText;
         private System.Windows.Forms.ColumnHeader columnTime;
         private System.Windows.Forms.ColumnHeader columnRead;
+        private System.Windows.Forms.Panel panelInput;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.ImageList imageListAvatars;
