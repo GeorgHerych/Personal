@@ -71,29 +71,6 @@ namespace Personal_
             imageList.ImageSize = new Size(32, 32);
             listView1.LargeImageList = imageList;
             listView1.TileSize = new Size(150, 36);
-
-            var chatBtn = new Button { Text = "Чат", Left = 10, Top = 520, Width = 80 };
-            chatBtn.Click += (s, e) =>
-            {
-                using (var f = new ChatForm(Login.Session.CurrentUser))
-                {
-                    f.ShowDialog();
-                }
-            };
-            Controls.Add(chatBtn);
-
-            var notifyBtn = new Button { Text = "Сповіщення", Left = 100, Top = 520, Width = 120 };
-            notifyBtn.Click += (s, e) =>
-            {
-                var user = Login.Session.CurrentUser;
-                if (user != null && user.IsAdmin)
-                {
-                    var text = Prompt("Текст сповіщення:");
-                    if (!string.IsNullOrWhiteSpace(text))
-                        NotificationService.CreateNotification(text, user.Id);
-                }
-            };
-            Controls.Add(notifyBtn);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -115,6 +92,25 @@ namespace Personal_
                 form.Controls.AddRange(new Control[] { label, box, buttonOk });
                 form.AcceptButton = buttonOk;
                 return form.ShowDialog() == DialogResult.OK ? box.Text : null;
+            }
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            using (var f = new ChatForm(Login.Session.CurrentUser))
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnNotify_Click(object sender, EventArgs e)
+        {
+            var user = Login.Session.CurrentUser;
+            if (user != null && user.IsAdmin)
+            {
+                var text = Prompt("Текст сповіщення:");
+                if (!string.IsNullOrWhiteSpace(text))
+                    NotificationService.CreateNotification(text, user.Id);
             }
         }
 
