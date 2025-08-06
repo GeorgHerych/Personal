@@ -40,8 +40,8 @@ namespace Personal_
                 return;
             }
 
-            bool ok = await AuthenticateAsync(login, pass);
-            if(!ok)
+            var user = await AuthenticateAsync(login, pass);
+            if(user == null)
             {
                 MessageBox.Show("Невірний логін або пароль.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -61,7 +61,7 @@ namespace Personal_
             }
             Properties.Settings.Default.Save();
 
-            Session.CurrentUserLogin = login;
+            Session.CurrentUser = user;
             this.Hide();
             using (var mainForm = new Form1())
             {
@@ -75,15 +75,15 @@ namespace Personal_
             throw new NotImplementedException();
         }
 
-        private async Task<bool> AuthenticateAsync(string login, string pass)
+        private async Task<User> AuthenticateAsync(string login, string pass)
         {
             using (var db = new AppDbContext())
             {
                 // Retrieve the user by login and validate the hashed password
                 var user = await db.Users.FirstOrDefaultAsync(u => u.Login == login);
-                if (user == null) return false;
+                if (user == null) return null;
 
-                return BCrypt.Net.BCrypt.Verify(pass, user.Password);
+                return BCrypt.Net.BCrypt.Verify(pass, user.Password) ? user : null;
             }
         }
         private void btnShowPass_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace Personal_
 
         }
         public static class Session {
-            public static string CurrentUserLogin { get; set; }
+            public static User CurrentUser { get; set; }
         }
     }
 }
