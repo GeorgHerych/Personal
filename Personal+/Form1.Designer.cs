@@ -73,6 +73,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
+            this.btnChat = new System.Windows.Forms.Button();
+            this.btnNotify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -455,6 +457,28 @@
             this.btnForward.UseVisualStyleBackColor = true;
             this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             //
+            // btnChat
+            //
+            this.btnChat.Location = new System.Drawing.Point(10, 520);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(80, 35);
+            this.btnChat.TabIndex = 39;
+            this.btnChat.Text = "Чат";
+            this.btnChat.UseVisualStyleBackColor = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            //
+            // btnNotify
+            //
+            this.btnNotify.Location = new System.Drawing.Point(100, 520);
+            this.btnNotify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNotify.Name = "btnNotify";
+            this.btnNotify.Size = new System.Drawing.Size(120, 35);
+            this.btnNotify.TabIndex = 40;
+            this.btnNotify.Text = "Сповіщення";
+            this.btnNotify.UseVisualStyleBackColor = true;
+            this.btnNotify.Click += new System.EventHandler(this.btnNotify_Click);
+            //
             // Form1
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -500,6 +524,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnNotify);
+            this.Controls.Add(this.btnChat);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.RightToLeftLayout = true;
@@ -554,6 +580,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnChat;
+        private System.Windows.Forms.Button btnNotify;
     }
 }
 
