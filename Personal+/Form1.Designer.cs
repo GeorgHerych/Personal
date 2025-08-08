@@ -74,6 +74,7 @@
             this.btnNotify = new System.Windows.Forms.Button();
             this.btnChat1 = new System.Windows.Forms.Button();
             this.btnChat2 = new System.Windows.Forms.Button();
+            this.btnKTVP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -453,7 +454,21 @@
             this.btnChat2.Text = "Чат 2";
             this.btnChat2.UseVisualStyleBackColor = true;
             this.btnChat2.Click += new System.EventHandler(this.btnChat2_Click);
+<<<<<<< HEAD
             // 
+=======
+            //
+            // btnKTVP
+            //
+            this.btnKTVP.Location = new System.Drawing.Point(12, 587);
+            this.btnKTVP.Name = "btnKTVP";
+            this.btnKTVP.Size = new System.Drawing.Size(90, 23);
+            this.btnKTVP.TabIndex = 63;
+            this.btnKTVP.Text = "КТВП";
+            this.btnKTVP.UseVisualStyleBackColor = true;
+            this.btnKTVP.Click += new System.EventHandler(this.btnKTVP_Click);
+            //
+>>>>>>> 1cea3d1717524de35f4f68b318d884c1d5007122
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +515,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnChat2);
+            this.Controls.Add(this.btnKTVP);
             this.Controls.Add(this.btnChat1);
             this.Controls.Add(this.btnNotify);
             this.Controls.Add(this.btnChat);
@@ -562,6 +578,7 @@
         private System.Windows.Forms.Button btnNotify;
         private System.Windows.Forms.Button btnChat1;
         private System.Windows.Forms.Button btnChat2;
+        private System.Windows.Forms.Button btnKTVP;
     }
 }
 

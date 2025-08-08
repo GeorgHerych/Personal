@@ -121,6 +121,14 @@ namespace Personal_
             }
         }
 
+        private void btnKTVP_Click(object sender, EventArgs e)
+        {
+            using (var form = new KTVPForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
         private void btnNotify_Click(object sender, EventArgs e)
         {
             var user = Login.Session.CurrentUser;
