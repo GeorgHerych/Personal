@@ -59,8 +59,9 @@ namespace Personal_
         private void InitializeComponent()
         {
             this.Text = "Персонал";
-            this.Width = 1200;
-            this.Height = 700;
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
 
             txtSearch.SetBounds(10, 10, 200, 25);
             btnSearch.Text = "Пошук";
@@ -131,6 +132,14 @@ namespace Personal_
                 txtSearch, btnSearch, cmbDepartments, btnClear, btnGroupSearch,
                 chkAll, chkOfficers, chkSergeants, chkSoldiers, btnExport, grid
             });
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                    ctrl.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            }
+
+            grid.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
         }
 
         private void RankChanged(object sender, EventArgs e)
