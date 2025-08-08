@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Personal_
 {
@@ -51,6 +52,29 @@ namespace Personal_
         private TextBox txtPidstava = new TextBox();
         private TextBox txtRaport = new TextBox();
 
+        // Extended movement fields
+        private TextBox txtTVO = new TextBox();
+        private Button btnTVOSearch = new Button();
+        private TextBox txtTVOPosada = new TextBox();
+        private Button btnTVOPosSearch = new Button();
+        private TextBox txtSuhpay = new TextBox();
+        private TextBox txtOrderNumber = new TextBox();
+        private DateTimePicker dtpOrderDate = new DateTimePicker();
+        private DateTimePicker dtpStart = new DateTimePicker();
+        private DateTimePicker dtpEnd = new DateTimePicker();
+        private TextBox txtTravelTime = new TextBox();
+        private TextBox txtTerm = new TextBox();
+        private TextBox txtPositionId = new TextBox();
+
+        // Closure section
+        private Label lblClosure = new Label();
+        private Button btnAutoDate = new Button();
+        private TextBox txtCloseOrderNumber = new TextBox();
+        private DateTimePicker dtpCloseOrderDate = new DateTimePicker();
+        private TextBox txtCloseReason = new TextBox();
+        private TextBox txtCloseReport = new TextBox();
+        private TextBox txtTotalLeave = new TextBox();
+
         // Status combos
         private ComboBox cmbStatus = new ComboBox();
         private ComboBox cmbAvailability = new ComboBox();
@@ -68,7 +92,7 @@ namespace Personal_
         {
             Text = "КТВП";
             Width = 900;
-            Height = 600;
+            Height = 1000;
 
             // Search
             txtSearch.SetBounds(10, 10, 200, 25);
@@ -147,6 +171,64 @@ namespace Personal_
             var lblRaport = new Label { Text = "Рапорт", Left = 10, Top = 280, Width = 80 };
             txtRaport.SetBounds(100, 280, 200, 25);
 
+            // Extended movement fields
+            var lblTVO = new Label { Text = "ТВО", Left = 10, Top = 310, Width = 80 };
+            txtTVO.SetBounds(100, 310, 140, 25);
+            btnTVOSearch.Text = "Пошук";
+            btnTVOSearch.SetBounds(245, 310, 55, 25);
+
+            var lblTVOPos = new Label { Text = "ТВО посади", Left = 10, Top = 340, Width = 80 };
+            txtTVOPosada.SetBounds(100, 340, 140, 25);
+            btnTVOPosSearch.Text = "Пошук";
+            btnTVOPosSearch.SetBounds(245, 340, 55, 25);
+
+            var lblSuhpay = new Label { Text = "Сухпай діб", Left = 10, Top = 370, Width = 80 };
+            txtSuhpay.SetBounds(100, 370, 200, 25);
+
+            var lblOrderNumber = new Label { Text = "Номер наказу", Left = 10, Top = 400, Width = 90 };
+            txtOrderNumber.SetBounds(100, 400, 200, 25);
+
+            var lblOrderDate = new Label { Text = "Дата наказу", Left = 10, Top = 430, Width = 90 };
+            dtpOrderDate.SetBounds(100, 430, 200, 25);
+
+            var lblStart = new Label { Text = "Початок", Left = 10, Top = 460, Width = 80 };
+            dtpStart.SetBounds(100, 460, 200, 25);
+
+            var lblEnd = new Label { Text = "Закінчення", Left = 10, Top = 490, Width = 80 };
+            dtpEnd.SetBounds(100, 490, 200, 25);
+
+            var lblTravelTime = new Label { Text = "Час на дорогу", Left = 10, Top = 520, Width = 90 };
+            txtTravelTime.SetBounds(100, 520, 200, 25);
+
+            var lblTerm = new Label { Text = "Термін", Left = 10, Top = 550, Width = 80 };
+            txtTerm.SetBounds(100, 550, 200, 25);
+
+            var lblPositionId = new Label { Text = "ІД посади", Left = 10, Top = 580, Width = 80 };
+            txtPositionId.SetBounds(100, 580, 200, 25);
+
+            // Closure section
+            lblClosure.Text = "ЗАКРИТТЯ";
+            lblClosure.Font = new Font(Font, FontStyle.Bold);
+            lblClosure.SetBounds(10, 610, 100, 25);
+            btnAutoDate.Text = "Автодата";
+            btnAutoDate.SetBounds(120, 610, 80, 25);
+            btnAutoDate.Click += (s, e) => dtpCloseOrderDate.Value = DateTime.Today;
+
+            var lblCloseOrderNumber = new Label { Text = "№ наказу закр.", Left = 10, Top = 640, Width = 110 };
+            txtCloseOrderNumber.SetBounds(120, 640, 180, 25);
+
+            var lblCloseOrderDate = new Label { Text = "Дата наказу", Left = 10, Top = 670, Width = 110 };
+            dtpCloseOrderDate.SetBounds(120, 670, 180, 25);
+
+            var lblCloseReason = new Label { Text = "Підстава закінч.", Left = 10, Top = 700, Width = 110 };
+            txtCloseReason.SetBounds(120, 700, 180, 25);
+
+            var lblCloseReport = new Label { Text = "Рапорт закінч.", Left = 10, Top = 730, Width = 110 };
+            txtCloseReport.SetBounds(120, 730, 180, 25);
+
+            var lblTotalLeave = new Label { Text = "Всього відпустки", Left = 10, Top = 760, Width = 110 };
+            txtTotalLeave.SetBounds(120, 760, 180, 25);
+
             // Status combos
             var lblStatus = new Label { Text = "Статус", Left = 350, Top = 190, Width = 80 };
             cmbStatus.SetBounds(430, 190, 200, 25);
@@ -182,7 +264,7 @@ namespace Personal_
             cmbPPD.DropDownStyle = ComboBoxStyle.DropDown;
 
             // Bottom list
-            lstBottom.SetBounds(10, 320, 840, 200);
+            lstBottom.SetBounds(10, 800, 840, 150);
 
             Controls.AddRange(new Control[] {
                 txtSearch, btnSearch, btnExport, btnNew, btnDuplicate, btnPrint,
@@ -192,6 +274,13 @@ namespace Personal_
                 lblId, txtId, btnIdSearch, lblIdInfo,
                 lblMovement, cmbMovementType,
                 lblMeta, txtMeta, lblMisce, txtMisce, lblPidstava, txtPidstava, lblRaport, txtRaport,
+                lblTVO, txtTVO, btnTVOSearch, lblTVOPos, txtTVOPosada, btnTVOPosSearch,
+                lblSuhpay, txtSuhpay, lblOrderNumber, txtOrderNumber, lblOrderDate, dtpOrderDate,
+                lblStart, dtpStart, lblEnd, dtpEnd, lblTravelTime, txtTravelTime,
+                lblTerm, txtTerm, lblPositionId, txtPositionId,
+                lblClosure, btnAutoDate, lblCloseOrderNumber, txtCloseOrderNumber,
+                lblCloseOrderDate, dtpCloseOrderDate, lblCloseReason, txtCloseReason,
+                lblCloseReport, txtCloseReport, lblTotalLeave, txtTotalLeave,
                 lblStatus, cmbStatus, lblAvailability, cmbAvailability, lblPPD, cmbPPD,
                 lstBottom
             });
