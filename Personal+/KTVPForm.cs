@@ -13,6 +13,9 @@ namespace Personal_
     /// </summary>
     public class KTVPForm : Form
     {
+        // Layout container
+        private FlowLayoutPanel panel = new FlowLayoutPanel();
+
         // Search controls
         private TextBox txtSearch = new TextBox();
         private Button btnSearch = new Button();
@@ -86,6 +89,7 @@ namespace Personal_
         public KTVPForm()
         {
             InitializeComponent();
+            lstBottom.Width = panel.ClientSize.Width - 20;
         }
 
         private void InitializeComponent()
@@ -93,6 +97,11 @@ namespace Personal_
             Text = "КТВП";
             Width = 900;
             Height = 1000;
+
+            panel.Dock = DockStyle.Fill;
+            panel.AutoScroll = true;
+            panel.WrapContents = true;
+            panel.FlowDirection = FlowDirection.LeftToRight;
 
             // Search
             txtSearch.SetBounds(10, 10, 200, 25);
@@ -265,8 +274,9 @@ namespace Personal_
 
             // Bottom list
             lstBottom.SetBounds(10, 800, 840, 150);
+            panel.SetFlowBreak(lstBottom, true);
 
-            Controls.AddRange(new Control[] {
+            panel.Controls.AddRange(new Control[] {
                 txtSearch, btnSearch, btnExport, btnNew, btnDuplicate, btnPrint,
                 chkPrintAll, chkPrintNumber,
                 btnClearFilter, btnGroupSearch, btnDepart, btnArrive, btnArrived,
@@ -284,6 +294,9 @@ namespace Personal_
                 lblStatus, cmbStatus, lblAvailability, cmbAvailability, lblPPD, cmbPPD,
                 lstBottom
             });
+
+            Controls.Add(panel);
+            Resize += (s, e) => lstBottom.Width = panel.ClientSize.Width - 20;
         }
 
         private void BtnIdSearch_Click(object sender, EventArgs e)
