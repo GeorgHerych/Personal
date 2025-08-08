@@ -95,8 +95,9 @@ namespace Personal_
         private void InitializeComponent()
         {
             Text = "КТВП";
-            Width = 900;
-            Height = 1000;
+            WindowState = FormWindowState.Maximized;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
 
             panel.Dock = DockStyle.Fill;
             panel.AutoScroll = true;
@@ -295,8 +296,20 @@ namespace Personal_
                 lstBottom
             });
 
+            foreach (Control ctrl in panel.Controls)
+            {
+                if (ctrl is Button)
+                    ctrl.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            }
+
+            lstBottom.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+
             Controls.Add(panel);
-            Resize += (s, e) => lstBottom.Width = panel.ClientSize.Width - 20;
+            Resize += (s, e) =>
+            {
+                lstBottom.Width = panel.ClientSize.Width - 20;
+                lstBottom.Height = panel.ClientSize.Height - lstBottom.Top - 10;
+            };
         }
 
         private void BtnIdSearch_Click(object sender, EventArgs e)
