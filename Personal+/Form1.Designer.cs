@@ -416,7 +416,7 @@
             // 
             // btnChat
             // 
-            this.btnChat.Location = new System.Drawing.Point(7, 338);
+            this.btnChat.Location = new System.Drawing.Point(533, 153);
             this.btnChat.Name = "btnChat";
             this.btnChat.Size = new System.Drawing.Size(53, 23);
             this.btnChat.TabIndex = 39;
@@ -426,36 +426,36 @@
             // 
             // btnNotify
             // 
-            this.btnNotify.Location = new System.Drawing.Point(67, 338);
+            this.btnNotify.Location = new System.Drawing.Point(592, 153);
             this.btnNotify.Name = "btnNotify";
             this.btnNotify.Size = new System.Drawing.Size(80, 23);
             this.btnNotify.TabIndex = 40;
             this.btnNotify.Text = "Сповіщення";
             this.btnNotify.UseVisualStyleBackColor = true;
             this.btnNotify.Click += new System.EventHandler(this.btnNotify_Click);
-            //
+            // 
             // btnChat1
-            //
-            this.btnChat1.Location = new System.Drawing.Point(153, 338);
+            // 
+            this.btnChat1.Location = new System.Drawing.Point(678, 153);
             this.btnChat1.Name = "btnChat1";
             this.btnChat1.Size = new System.Drawing.Size(75, 23);
             this.btnChat1.TabIndex = 41;
             this.btnChat1.Text = "Чат 1";
             this.btnChat1.UseVisualStyleBackColor = true;
             this.btnChat1.Click += new System.EventHandler(this.btnChat1_Click);
-            //
+            // 
             // btnChat2
-            //
-            this.btnChat2.Location = new System.Drawing.Point(234, 338);
+            // 
+            this.btnChat2.Location = new System.Drawing.Point(759, 153);
             this.btnChat2.Name = "btnChat2";
             this.btnChat2.Size = new System.Drawing.Size(75, 23);
             this.btnChat2.TabIndex = 42;
             this.btnChat2.Text = "Чат 2";
             this.btnChat2.UseVisualStyleBackColor = true;
             this.btnChat2.Click += new System.EventHandler(this.btnChat2_Click);
-            //
+            // 
             // Form1
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
