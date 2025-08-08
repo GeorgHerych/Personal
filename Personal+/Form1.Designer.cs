@@ -72,6 +72,8 @@
             this.btnForward = new System.Windows.Forms.Button();
             this.btnChat = new System.Windows.Forms.Button();
             this.btnNotify = new System.Windows.Forms.Button();
+            this.btnChat1 = new System.Windows.Forms.Button();
+            this.btnChat2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -431,9 +433,29 @@
             this.btnNotify.Text = "Сповіщення";
             this.btnNotify.UseVisualStyleBackColor = true;
             this.btnNotify.Click += new System.EventHandler(this.btnNotify_Click);
-            // 
+            //
+            // btnChat1
+            //
+            this.btnChat1.Location = new System.Drawing.Point(153, 338);
+            this.btnChat1.Name = "btnChat1";
+            this.btnChat1.Size = new System.Drawing.Size(75, 23);
+            this.btnChat1.TabIndex = 41;
+            this.btnChat1.Text = "Чат 1";
+            this.btnChat1.UseVisualStyleBackColor = true;
+            this.btnChat1.Click += new System.EventHandler(this.btnChat1_Click);
+            //
+            // btnChat2
+            //
+            this.btnChat2.Location = new System.Drawing.Point(234, 338);
+            this.btnChat2.Name = "btnChat2";
+            this.btnChat2.Size = new System.Drawing.Size(75, 23);
+            this.btnChat2.TabIndex = 42;
+            this.btnChat2.Text = "Чат 2";
+            this.btnChat2.UseVisualStyleBackColor = true;
+            this.btnChat2.Click += new System.EventHandler(this.btnChat2_Click);
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
@@ -477,6 +499,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnChat2);
+            this.Controls.Add(this.btnChat1);
             this.Controls.Add(this.btnNotify);
             this.Controls.Add(this.btnChat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -536,6 +560,8 @@
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnChat;
         private System.Windows.Forms.Button btnNotify;
+        private System.Windows.Forms.Button btnChat1;
+        private System.Windows.Forms.Button btnChat2;
     }
 }
 
