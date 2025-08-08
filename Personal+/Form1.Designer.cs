@@ -72,9 +72,6 @@
             this.btnForward = new System.Windows.Forms.Button();
             this.btnChat = new System.Windows.Forms.Button();
             this.btnNotify = new System.Windows.Forms.Button();
-            this.btnChat1 = new System.Windows.Forms.Button();
-            this.btnChat2 = new System.Windows.Forms.Button();
-            this.btnKTVP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,6 +293,7 @@
             this.button3.TabIndex = 25;
             this.button3.Text = "КТВП";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -435,42 +433,8 @@
             this.btnNotify.UseVisualStyleBackColor = true;
             this.btnNotify.Click += new System.EventHandler(this.btnNotify_Click);
             // 
-            // btnChat1
-            // 
-            this.btnChat1.Location = new System.Drawing.Point(678, 153);
-            this.btnChat1.Name = "btnChat1";
-            this.btnChat1.Size = new System.Drawing.Size(75, 23);
-            this.btnChat1.TabIndex = 41;
-            this.btnChat1.Text = "Чат 1";
-            this.btnChat1.UseVisualStyleBackColor = true;
-            this.btnChat1.Click += new System.EventHandler(this.btnChat1_Click);
-            // 
-            // btnChat2
-            // 
-            this.btnChat2.Location = new System.Drawing.Point(759, 153);
-            this.btnChat2.Name = "btnChat2";
-            this.btnChat2.Size = new System.Drawing.Size(75, 23);
-            this.btnChat2.TabIndex = 42;
-            this.btnChat2.Text = "Чат 2";
-            this.btnChat2.UseVisualStyleBackColor = true;
-            this.btnChat2.Click += new System.EventHandler(this.btnChat2_Click);
-<<<<<<< HEAD
-            // 
-=======
-            //
-            // btnKTVP
-            //
-            this.btnKTVP.Location = new System.Drawing.Point(12, 587);
-            this.btnKTVP.Name = "btnKTVP";
-            this.btnKTVP.Size = new System.Drawing.Size(90, 23);
-            this.btnKTVP.TabIndex = 63;
-            this.btnKTVP.Text = "КТВП";
-            this.btnKTVP.UseVisualStyleBackColor = true;
-            this.btnKTVP.Click += new System.EventHandler(this.btnKTVP_Click);
-            //
->>>>>>> 1cea3d1717524de35f4f68b318d884c1d5007122
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
@@ -514,9 +478,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnChat2);
-            this.Controls.Add(this.btnKTVP);
-            this.Controls.Add(this.btnChat1);
             this.Controls.Add(this.btnNotify);
             this.Controls.Add(this.btnChat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -576,9 +537,7 @@
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnChat;
         private System.Windows.Forms.Button btnNotify;
-        private System.Windows.Forms.Button btnChat1;
-        private System.Windows.Forms.Button btnChat2;
-        private System.Windows.Forms.Button btnKTVP;
+        
     }
 }
 

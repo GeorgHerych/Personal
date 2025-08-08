@@ -103,25 +103,7 @@ namespace Personal_
             }
         }
 
-        private void btnChat1_Click(object sender, EventArgs e)
-        {
-            using (var f = new ChatForm(Login.Session.CurrentUser))
-            {
-                f.Text = "Чат 1";
-                f.ShowDialog();
-            }
-        }
-
-        private void btnChat2_Click(object sender, EventArgs e)
-        {
-            using (var f = new ChatForm(Login.Session.CurrentUser))
-            {
-                f.Text = "Чат 2";
-                f.ShowDialog();
-            }
-        }
-
-        private void btnKTVP_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             using (var form = new KTVPForm())
             {
