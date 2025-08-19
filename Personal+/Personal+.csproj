@@ -97,14 +97,54 @@
     <Compile Include="SeedData.cs" />
     <Compile Include="User.cs" />
     <Compile Include="ServiceMember.cs" />
-    <Compile Include="PersonnelForm.cs" />
-    <Compile Include="ChangesForm.cs" />
-    <Compile Include="ReportForm.cs" />
-    <Compile Include="MainDataForm.cs" />
-    <Compile Include="ReferencesForm.cs" />
-    <Compile Include="DailyReportForm.cs" />
-    <Compile Include="EjosForm.cs" />
-    <Compile Include="OrdersForm.cs" />
+    <Compile Include="PersonnelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonnelForm.Designer.cs">
+      <DependentUpon>PersonnelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangesForm.Designer.cs">
+      <DependentUpon>ChangesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDataForm.Designer.cs">
+      <DependentUpon>MainDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReferencesForm.Designer.cs">
+      <DependentUpon>ReferencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyReportForm.Designer.cs">
+      <DependentUpon>DailyReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EjosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EjosForm.Designer.cs">
+      <DependentUpon>EjosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

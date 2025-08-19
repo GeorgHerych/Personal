@@ -2,11 +2,11 @@ using System.Windows.Forms;
 
 namespace Personal_
 {
-    public class ReportForm : Form
+    public partial class ReportForm : Form
     {
         public ReportForm()
         {
-            Text = "Рапорт";
+            InitializeComponent();
         }
     }
 }
