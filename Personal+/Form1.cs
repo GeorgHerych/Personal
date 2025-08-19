@@ -95,22 +95,6 @@ namespace Personal_
             }
         }
 
-        private void btnChat_Click(object sender, EventArgs e)
-        {
-            using (var f = new ChatForm(Login.Session.CurrentUser))
-            {
-                f.ShowDialog();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            using (var form = new KTVPForm())
-            {
-                form.ShowDialog();
-            }
-        }
-
         private void btnNotify_Click(object sender, EventArgs e)
         {
             var user = Login.Session.CurrentUser;
@@ -119,14 +103,6 @@ namespace Personal_
                 var text = Prompt("Текст сповіщення:");
                 if (!string.IsNullOrWhiteSpace(text))
                     NotificationService.CreateNotification(text, user.Id);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            using (var form = new PersonnelForm())
-            {
-                form.ShowDialog();
             }
         }
 

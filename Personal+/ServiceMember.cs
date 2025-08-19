@@ -5,8 +5,8 @@ namespace Personal_
 {
     /// <summary>
     /// Represents a basic record about a service member. This is a minimal
-    /// model used by <see cref="KTVPForm"/> for demonstrating how data could
-    /// be stored. It can be extended with additional fields as needed.
+    /// model used for demonstrating how data could be stored.
+    /// It can be extended with additional fields as needed.
     /// </summary>
     public class ServiceMember
     {

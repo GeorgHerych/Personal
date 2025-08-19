@@ -27,10 +27,7 @@ namespace Personal_
                     .ToList();
                 foreach (var n in notifications)
                 {
-                    using (var form = new NotificationForm(n))
-                    {
-                        form.ShowDialog(owner);
-                    }
+                    MessageBox.Show(owner, n.Text, "Сповіщення");
                     db.NotificationReads.Add(new NotificationRead { NotificationId = n.Id, UserId = user.Id });
                     db.SaveChanges();
                 }
