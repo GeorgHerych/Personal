@@ -54,8 +54,6 @@
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -70,7 +68,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
-            this.btnChat = new System.Windows.Forms.Button();
             this.btnNotify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -275,28 +272,9 @@
             this.button1.Text = "Особовий склад";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1243, 320);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 33);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Штат";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1243, 359);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 33);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "КТВП";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
+            //
             // button4
-            // 
+            //
             this.button4.Location = new System.Drawing.Point(1243, 398);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 33);
@@ -413,15 +391,6 @@
             this.btnForward.UseVisualStyleBackColor = true;
             this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
-            // btnChat
-            // 
-            this.btnChat.Location = new System.Drawing.Point(533, 153);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(53, 23);
-            this.btnChat.TabIndex = 39;
-            this.btnChat.Text = "Чат";
-            this.btnChat.UseVisualStyleBackColor = true;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnNotify
             // 
@@ -452,8 +421,6 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -479,7 +446,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNotify);
-            this.Controls.Add(this.btnChat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -519,8 +485,6 @@
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -535,7 +499,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnForward;
-        private System.Windows.Forms.Button btnChat;
         private System.Windows.Forms.Button btnNotify;
         
     }
