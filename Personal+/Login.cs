@@ -13,6 +13,7 @@ namespace Personal_
 {
     public partial class Login : Form
     {
+        private readonly Timer showPassTimer;
         public Login()
         {
             InitializeComponent();
@@ -20,6 +21,14 @@ namespace Personal_
             btnLogin.Click += Login_Click;
             btnShowPass.Click += btnShowPass_Click;
             Text_Pass.UseSystemPasswordChar = true;
+
+            showPassTimer = new Timer { Interval = 5000 };
+            showPassTimer.Tick += (s, e) =>
+            {
+                Text_Pass.UseSystemPasswordChar = true;
+                btnShowPass.Text = "Показати";
+                showPassTimer.Stop();
+            };
 
             if (Properties.Settings.Default.RememberMe)
             {
@@ -88,8 +97,18 @@ namespace Personal_
         }
         private void btnShowPass_Click(object sender, EventArgs e)
         {
-            Text_Pass.UseSystemPasswordChar = !Text_Pass.UseSystemPasswordChar;
-            btnShowPass.Text = Text_Pass.UseSystemPasswordChar ? "Показати" : "Сховати";
+            if (Text_Pass.UseSystemPasswordChar)
+            {
+                Text_Pass.UseSystemPasswordChar = false;
+                btnShowPass.Text = "Сховати";
+                showPassTimer.Start();
+            }
+            else
+            {
+                Text_Pass.UseSystemPasswordChar = true;
+                btnShowPass.Text = "Показати";
+                showPassTimer.Stop();
+            }
         }
         private void RememberMe_CheckedChanged(object sender, EventArgs e)
         {

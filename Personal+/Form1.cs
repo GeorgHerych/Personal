@@ -71,6 +71,15 @@ namespace Personal_
             imageList.ImageSize = new Size(32, 32);
             listView1.LargeImageList = imageList;
             listView1.TileSize = new Size(150, 36);
+
+            button1.Click += button1_Click;
+            button4.Click += button4_Click;
+            button5.Click += button5_Click;
+            button6.Click += button6_Click;
+            button7.Click += button7_Click;
+            button8.Click += button8_Click;
+            button9.Click += button9_Click;
+            button10.Click += button10_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -236,6 +245,70 @@ namespace Personal_
         {
             btnBack.Enabled = backHistory.Count > 0;
             btnForward.Enabled = forwardHistory.Count > 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var form = new PersonnelForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var form = new ChangesForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (var form = new ReportForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (var form = new MainDataForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            using (var form = new ReferencesForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            using (var form = new DailyReportForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            using (var form = new EjosForm())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            using (var form = new OrdersForm())
+            {
+                form.ShowDialog();
+            }
         }
     }
 }
