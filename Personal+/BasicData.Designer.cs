@@ -272,7 +272,7 @@ namespace Personal_
             // 
             this.txtReadyOrdersStaffPath.Location = new System.Drawing.Point(218, 350);
             this.txtReadyOrdersStaffPath.Name = "txtReadyOrdersStaffPath";
-            this.txtReadyOrdersStaffPath.Size = new System.Drawing.Size(200, 20);
+            this.txtReadyOrdersStaffPath.Size = new System.Drawing.Size(250, 20);
             this.txtReadyOrdersStaffPath.TabIndex = 27;
             // 
             // labelReadyOrdersRSPath
@@ -288,7 +288,7 @@ namespace Personal_
             // 
             this.txtReadyOrdersRSPath.Location = new System.Drawing.Point(218, 376);
             this.txtReadyOrdersRSPath.Name = "txtReadyOrdersRSPath";
-            this.txtReadyOrdersRSPath.Size = new System.Drawing.Size(200, 20);
+            this.txtReadyOrdersRSPath.Size = new System.Drawing.Size(250, 20);
             this.txtReadyOrdersRSPath.TabIndex = 29;
             // 
             // labelScannedDocsPath
@@ -312,7 +312,7 @@ namespace Personal_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(430, 440);
+            this.ClientSize = new System.Drawing.Size(480, 440);
             this.Controls.Add(this.txtScannedDocsPath);
             this.Controls.Add(this.labelScannedDocsPath);
             this.Controls.Add(this.txtReadyOrdersRSPath);
