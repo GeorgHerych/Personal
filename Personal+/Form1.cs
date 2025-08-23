@@ -115,6 +115,62 @@ namespace Personal_
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var form = new OpenStaff())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var form = new MovesOpen())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var form = new ChangesOpen())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (var form = new RaportOpen())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (var form = new BasicData())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            using (var form = new Dictionary())
+            {
+                form.ShowDialog();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            using (var form = new Ejoos())
+            {
+                form.ShowDialog();
+            }
+        }
+
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listView1.SelectedItems.Count > 0 && listView1.SelectedItems[0].Tag is FileItem item)
