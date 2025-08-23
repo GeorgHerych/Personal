@@ -26,297 +26,237 @@ namespace Personal_
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox groupBoxCategories;
+        private System.Windows.Forms.CheckBox chkAll;
+        private System.Windows.Forms.CheckBox chkOfficers;
+        private System.Windows.Forms.CheckBox chkSergeants;
+        private System.Windows.Forms.CheckBox chkSoldiers;
+        private System.Windows.Forms.Label labelQuickSearch;
+        private System.Windows.Forms.TextBox txtQuickSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label labelUnit;
+        private System.Windows.Forms.ComboBox cmbUnit;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnShpo;
+        private System.Windows.Forms.Button btnShpo2;
+        private System.Windows.Forms.Button btnClearFilter;
+        private System.Windows.Forms.Button btnGroupSearch;
+        private System.Windows.Forms.ListBox listBoxStaff;
+
         private void InitializeComponent()
         {
-            this.labelReferenceNumber = new System.Windows.Forms.Label();
-            this.txtReferenceNumber = new System.Windows.Forms.TextBox();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.chkCompleted = new System.Windows.Forms.CheckBox();
-            this.chkForming = new System.Windows.Forms.CheckBox();
-            this.chkVacant = new System.Windows.Forms.CheckBox();
-            this.labelDivision = new System.Windows.Forms.Label();
-            this.cmbDivision = new System.Windows.Forms.ComboBox();
-            this.labelAssociation = new System.Windows.Forms.Label();
-            this.cmbAssociation = new System.Windows.Forms.ComboBox();
-            this.labelManagement = new System.Windows.Forms.Label();
-            this.cmbManagement = new System.Windows.Forms.ComboBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBoxCategories = new System.Windows.Forms.GroupBox();
+            this.chkSoldiers = new System.Windows.Forms.CheckBox();
+            this.chkSergeants = new System.Windows.Forms.CheckBox();
+            this.chkOfficers = new System.Windows.Forms.CheckBox();
+            this.chkAll = new System.Windows.Forms.CheckBox();
+            this.labelQuickSearch = new System.Windows.Forms.Label();
+            this.txtQuickSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.labelUnit = new System.Windows.Forms.Label();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridViewStaff = new System.Windows.Forms.DataGridView();
-            this.NumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PositionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnShpo = new System.Windows.Forms.Button();
+            this.btnShpo2 = new System.Windows.Forms.Button();
+            this.btnClearFilter = new System.Windows.Forms.Button();
+            this.btnGroupSearch = new System.Windows.Forms.Button();
+            this.listBoxStaff = new System.Windows.Forms.ListBox();
+            this.groupBoxCategories.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelReferenceNumber
-            //
-            this.labelReferenceNumber.AutoSize = true;
-            this.labelReferenceNumber.Location = new System.Drawing.Point(12, 15);
-            this.labelReferenceNumber.Name = "labelReferenceNumber";
-            this.labelReferenceNumber.Size = new System.Drawing.Size(103, 13);
-            this.labelReferenceNumber.TabIndex = 0;
-            this.labelReferenceNumber.Text = "Довідковий номер:";
-            //
-            // txtReferenceNumber
-            //
-            this.txtReferenceNumber.Location = new System.Drawing.Point(121, 12);
-            this.txtReferenceNumber.Name = "txtReferenceNumber";
-            this.txtReferenceNumber.Size = new System.Drawing.Size(80, 20);
-            this.txtReferenceNumber.TabIndex = 1;
-            //
-            // labelStatus
-            //
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(207, 15);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(47, 13);
-            this.labelStatus.TabIndex = 2;
-            this.labelStatus.Text = "Статус:";
-            //
-            // chkCompleted
-            //
-            this.chkCompleted.AutoSize = true;
-            this.chkCompleted.Location = new System.Drawing.Point(260, 14);
-            this.chkCompleted.Name = "chkCompleted";
-            this.chkCompleted.Size = new System.Drawing.Size(105, 17);
-            this.chkCompleted.TabIndex = 3;
-            this.chkCompleted.Text = "Укомплектовано";
-            this.chkCompleted.UseVisualStyleBackColor = true;
-            //
-            // chkForming
-            //
-            this.chkForming.AutoSize = true;
-            this.chkForming.Location = new System.Drawing.Point(371, 14);
-            this.chkForming.Name = "chkForming";
-            this.chkForming.Size = new System.Drawing.Size(82, 17);
-            this.chkForming.TabIndex = 4;
-            this.chkForming.Text = "Формується";
-            this.chkForming.UseVisualStyleBackColor = true;
-            //
-            // chkVacant
-            //
-            this.chkVacant.AutoSize = true;
-            this.chkVacant.Location = new System.Drawing.Point(459, 14);
-            this.chkVacant.Name = "chkVacant";
-            this.chkVacant.Size = new System.Drawing.Size(74, 17);
-            this.chkVacant.TabIndex = 5;
-            this.chkVacant.Text = "Вакантно";
-            this.chkVacant.UseVisualStyleBackColor = true;
-            //
-            // labelDivision
-            //
-            this.labelDivision.AutoSize = true;
-            this.labelDivision.Location = new System.Drawing.Point(12, 45);
-            this.labelDivision.Name = "labelDivision";
-            this.labelDivision.Size = new System.Drawing.Size(58, 13);
-            this.labelDivision.TabIndex = 6;
-            this.labelDivision.Text = "Дивізіон:";
-            //
-            // cmbDivision
-            //
-            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDivision.FormattingEnabled = true;
-            this.cmbDivision.Location = new System.Drawing.Point(76, 42);
-            this.cmbDivision.Name = "cmbDivision";
-            this.cmbDivision.Size = new System.Drawing.Size(121, 21);
-            this.cmbDivision.TabIndex = 7;
-            //
-            // labelAssociation
-            //
-            this.labelAssociation.AutoSize = true;
-            this.labelAssociation.Location = new System.Drawing.Point(203, 45);
-            this.labelAssociation.Name = "labelAssociation";
-            this.labelAssociation.Size = new System.Drawing.Size(74, 13);
-            this.labelAssociation.TabIndex = 8;
-            this.labelAssociation.Text = "Об'єднання:";
-            //
-            // cmbAssociation
-            //
-            this.cmbAssociation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAssociation.FormattingEnabled = true;
-            this.cmbAssociation.Location = new System.Drawing.Point(283, 42);
-            this.cmbAssociation.Name = "cmbAssociation";
-            this.cmbAssociation.Size = new System.Drawing.Size(121, 21);
-            this.cmbAssociation.TabIndex = 9;
-            //
-            // labelManagement
-            //
-            this.labelManagement.AutoSize = true;
-            this.labelManagement.Location = new System.Drawing.Point(410, 45);
-            this.labelManagement.Name = "labelManagement";
-            this.labelManagement.Size = new System.Drawing.Size(72, 13);
-            this.labelManagement.TabIndex = 10;
-            this.labelManagement.Text = "Управління:";
-            //
-            // cmbManagement
-            //
-            this.cmbManagement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbManagement.FormattingEnabled = true;
-            this.cmbManagement.Location = new System.Drawing.Point(488, 42);
-            this.cmbManagement.Name = "cmbManagement";
-            this.cmbManagement.Size = new System.Drawing.Size(121, 21);
-            this.cmbManagement.TabIndex = 11;
-            //
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTitle.Location = new System.Drawing.Point(12, 9);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(67, 24);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Штат";
+            // 
+            // groupBoxCategories
+            // 
+            this.groupBoxCategories.Controls.Add(this.chkSoldiers);
+            this.groupBoxCategories.Controls.Add(this.chkSergeants);
+            this.groupBoxCategories.Controls.Add(this.chkOfficers);
+            this.groupBoxCategories.Controls.Add(this.chkAll);
+            this.groupBoxCategories.Location = new System.Drawing.Point(15, 40);
+            this.groupBoxCategories.Name = "groupBoxCategories";
+            this.groupBoxCategories.Size = new System.Drawing.Size(280, 45);
+            this.groupBoxCategories.TabIndex = 1;
+            this.groupBoxCategories.TabStop = false;
+            // 
+            // chkSoldiers
+            // 
+            this.chkSoldiers.AutoSize = true;
+            this.chkSoldiers.Location = new System.Drawing.Point(211, 19);
+            this.chkSoldiers.Name = "chkSoldiers";
+            this.chkSoldiers.Size = new System.Drawing.Size(63, 17);
+            this.chkSoldiers.TabIndex = 3;
+            this.chkSoldiers.Text = "Солдати";
+            this.chkSoldiers.UseVisualStyleBackColor = true;
+            // 
+            // chkSergeants
+            // 
+            this.chkSergeants.AutoSize = true;
+            this.chkSergeants.Location = new System.Drawing.Point(127, 19);
+            this.chkSergeants.Name = "chkSergeants";
+            this.chkSergeants.Size = new System.Drawing.Size(78, 17);
+            this.chkSergeants.TabIndex = 2;
+            this.chkSergeants.Text = "Сержанти";
+            this.chkSergeants.UseVisualStyleBackColor = true;
+            // 
+            // chkOfficers
+            // 
+            this.chkOfficers.AutoSize = true;
+            this.chkOfficers.Location = new System.Drawing.Point(54, 19);
+            this.chkOfficers.Name = "chkOfficers";
+            this.chkOfficers.Size = new System.Drawing.Size(67, 17);
+            this.chkOfficers.TabIndex = 1;
+            this.chkOfficers.Text = "Офіцери";
+            this.chkOfficers.UseVisualStyleBackColor = true;
+            // 
+            // chkAll
+            // 
+            this.chkAll.AutoSize = true;
+            this.chkAll.Location = new System.Drawing.Point(6, 19);
+            this.chkAll.Name = "chkAll";
+            this.chkAll.Size = new System.Drawing.Size(42, 17);
+            this.chkAll.TabIndex = 0;
+            this.chkAll.Text = "Всі";
+            this.chkAll.UseVisualStyleBackColor = true;
+            // 
+            // labelQuickSearch
+            // 
+            this.labelQuickSearch.AutoSize = true;
+            this.labelQuickSearch.Location = new System.Drawing.Point(301, 55);
+            this.labelQuickSearch.Name = "labelQuickSearch";
+            this.labelQuickSearch.Size = new System.Drawing.Size(84, 13);
+            this.labelQuickSearch.TabIndex = 2;
+            this.labelQuickSearch.Text = "Швидкий пошук";
+            // 
+            // txtQuickSearch
+            // 
+            this.txtQuickSearch.Location = new System.Drawing.Point(391, 52);
+            this.txtQuickSearch.Name = "txtQuickSearch";
+            this.txtQuickSearch.Size = new System.Drawing.Size(150, 20);
+            this.txtQuickSearch.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(547, 50);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Пошук";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // labelUnit
-            //
+            // 
             this.labelUnit.AutoSize = true;
-            this.labelUnit.Location = new System.Drawing.Point(615, 45);
+            this.labelUnit.Location = new System.Drawing.Point(628, 55);
             this.labelUnit.Name = "labelUnit";
             this.labelUnit.Size = new System.Drawing.Size(59, 13);
-            this.labelUnit.TabIndex = 12;
-            this.labelUnit.Text = "Підрозділ:";
-            //
+            this.labelUnit.TabIndex = 5;
+            this.labelUnit.Text = "Підрозділ";
+            // 
             // cmbUnit
-            //
+            // 
             this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(680, 42);
+            this.cmbUnit.Location = new System.Drawing.Point(693, 52);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(121, 21);
-            this.cmbUnit.TabIndex = 13;
-            //
-            // btnPrint
-            //
-            this.btnPrint.Location = new System.Drawing.Point(807, 40);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 14;
-            this.btnPrint.Text = "Друк";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            //
-            // labelSearch
-            //
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(888, 45);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(102, 13);
-            this.labelSearch.TabIndex = 15;
-            this.labelSearch.Text = "Пошуковий запит:";
-            //
-            // txtSearch
-            //
-            this.txtSearch.Location = new System.Drawing.Point(996, 42);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 20);
-            this.txtSearch.TabIndex = 16;
-            //
-            // dataGridViewStaff
-            //
-            this.dataGridViewStaff.AllowUserToAddRows = false;
-            this.dataGridViewStaff.AllowUserToDeleteRows = false;
-            this.dataGridViewStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumberColumn,
-            this.PositionColumn,
-            this.RankColumn,
-            this.NameColumn,
-            this.StatusColumn});
-            this.dataGridViewStaff.Location = new System.Drawing.Point(15, 80);
-            this.dataGridViewStaff.Name = "dataGridViewStaff";
-            this.dataGridViewStaff.ReadOnly = true;
-            this.dataGridViewStaff.Size = new System.Drawing.Size(1181, 469);
-            this.dataGridViewStaff.TabIndex = 17;
+            this.cmbUnit.TabIndex = 6;
             // 
-            // NumberColumn
+            // btnExport
             // 
-            this.NumberColumn.HeaderText = "№";
-            this.NumberColumn.Name = "NumberColumn";
-            this.NumberColumn.ReadOnly = true;
-            this.NumberColumn.Width = 40;
+            this.btnExport.Location = new System.Drawing.Point(15, 92);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(100, 23);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.Text = "Вигрузити";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // PositionColumn
+            // btnShpo
             // 
-            this.PositionColumn.HeaderText = "Посада";
-            this.PositionColumn.Name = "PositionColumn";
-            this.PositionColumn.ReadOnly = true;
-            this.PositionColumn.Width = 200;
+            this.btnShpo.Location = new System.Drawing.Point(121, 92);
+            this.btnShpo.Name = "btnShpo";
+            this.btnShpo.Size = new System.Drawing.Size(100, 23);
+            this.btnShpo.TabIndex = 8;
+            this.btnShpo.Text = "ШПО";
+            this.btnShpo.UseVisualStyleBackColor = true;
             // 
-            // RankColumn
+            // btnShpo2
             // 
-            this.RankColumn.HeaderText = "Звання";
-            this.RankColumn.Name = "RankColumn";
-            this.RankColumn.ReadOnly = true;
+            this.btnShpo2.Location = new System.Drawing.Point(227, 92);
+            this.btnShpo2.Name = "btnShpo2";
+            this.btnShpo2.Size = new System.Drawing.Size(100, 23);
+            this.btnShpo2.TabIndex = 9;
+            this.btnShpo2.Text = "ШПО 2";
+            this.btnShpo2.UseVisualStyleBackColor = true;
             // 
-            // NameColumn
+            // btnClearFilter
             // 
-            this.NameColumn.HeaderText = "П.І.Б.";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            this.NameColumn.Width = 250;
+            this.btnClearFilter.Location = new System.Drawing.Point(333, 92);
+            this.btnClearFilter.Name = "btnClearFilter";
+            this.btnClearFilter.Size = new System.Drawing.Size(110, 23);
+            this.btnClearFilter.TabIndex = 10;
+            this.btnClearFilter.Text = "Очистити фільтр";
+            this.btnClearFilter.UseVisualStyleBackColor = true;
             // 
-            // StatusColumn
+            // btnGroupSearch
             // 
-            this.StatusColumn.HeaderText = "Статус";
-            this.StatusColumn.Name = "StatusColumn";
-            this.StatusColumn.ReadOnly = true;
-            this.StatusColumn.Width = 80;
+            this.btnGroupSearch.Location = new System.Drawing.Point(449, 92);
+            this.btnGroupSearch.Name = "btnGroupSearch";
+            this.btnGroupSearch.Size = new System.Drawing.Size(110, 23);
+            this.btnGroupSearch.TabIndex = 11;
+            this.btnGroupSearch.Text = "Груповий пошук";
+            this.btnGroupSearch.UseVisualStyleBackColor = true;
+            // 
+            // listBoxStaff
+            // 
+            this.listBoxStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxStaff.FormattingEnabled = true;
+            this.listBoxStaff.ItemHeight = 15;
+            this.listBoxStaff.Location = new System.Drawing.Point(15, 131);
+            this.listBoxStaff.Name = "listBoxStaff";
+            this.listBoxStaff.Size = new System.Drawing.Size(902, 349);
+            this.listBoxStaff.TabIndex = 12;
             // 
             // OpenStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(1210, 561);
-            this.Controls.Add(this.dataGridViewStaff);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.labelSearch);
-            this.Controls.Add(this.btnPrint);
+            this.ClientSize = new System.Drawing.Size(934, 500);
+            this.Controls.Add(this.listBoxStaff);
+            this.Controls.Add(this.btnGroupSearch);
+            this.Controls.Add(this.btnClearFilter);
+            this.Controls.Add(this.btnShpo2);
+            this.Controls.Add(this.btnShpo);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.cmbUnit);
             this.Controls.Add(this.labelUnit);
-            this.Controls.Add(this.cmbManagement);
-            this.Controls.Add(this.labelManagement);
-            this.Controls.Add(this.cmbAssociation);
-            this.Controls.Add(this.labelAssociation);
-            this.Controls.Add(this.cmbDivision);
-            this.Controls.Add(this.labelDivision);
-            this.Controls.Add(this.chkVacant);
-            this.Controls.Add(this.chkForming);
-            this.Controls.Add(this.chkCompleted);
-            this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.txtReferenceNumber);
-            this.Controls.Add(this.labelReferenceNumber);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtQuickSearch);
+            this.Controls.Add(this.labelQuickSearch);
+            this.Controls.Add(this.groupBoxCategories);
+            this.Controls.Add(this.labelTitle);
             this.Name = "OpenStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Штат";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
+            this.groupBoxCategories.ResumeLayout(false);
+            this.groupBoxCategories.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelReferenceNumber;
-        private System.Windows.Forms.TextBox txtReferenceNumber;
-        private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.CheckBox chkCompleted;
-        private System.Windows.Forms.CheckBox chkForming;
-        private System.Windows.Forms.CheckBox chkVacant;
-        private System.Windows.Forms.Label labelDivision;
-        private System.Windows.Forms.ComboBox cmbDivision;
-        private System.Windows.Forms.Label labelAssociation;
-        private System.Windows.Forms.ComboBox cmbAssociation;
-        private System.Windows.Forms.Label labelManagement;
-        private System.Windows.Forms.ComboBox cmbManagement;
-        private System.Windows.Forms.Label labelUnit;
-        private System.Windows.Forms.ComboBox cmbUnit;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label labelSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridViewStaff;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PositionColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RankColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
     }
 }
 
