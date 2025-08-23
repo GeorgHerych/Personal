@@ -15,6 +15,7 @@ namespace Personal_
         public ChangesOpen()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

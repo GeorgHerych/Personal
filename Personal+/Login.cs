@@ -16,6 +16,7 @@ namespace Personal_
         public Login()
         {
             InitializeComponent();
+            Theme.Apply(this);
             this.AcceptButton = btnLogin;
             btnLogin.Click += Login_Click;
             Text_Pass.UseSystemPasswordChar = true;

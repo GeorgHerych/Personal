@@ -15,6 +15,7 @@ namespace Personal_
         public MovesOpen()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

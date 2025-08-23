@@ -15,6 +15,7 @@ namespace Personal_
         public Ejoos()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

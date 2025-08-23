@@ -15,6 +15,7 @@ namespace Personal_
         public PersonnelOpen()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

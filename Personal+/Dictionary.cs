@@ -15,6 +15,7 @@ namespace Personal_
         public Dictionary()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Personal_
         public RaportOpen()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }
