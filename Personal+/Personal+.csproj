@@ -76,7 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessServiceMemberRepository.cs" />
     <Compile Include="AppDbContext.cs" />
     <Compile Include="BasicData.cs">
       <SubType>Form</SubType>

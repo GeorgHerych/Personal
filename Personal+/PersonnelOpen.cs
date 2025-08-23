@@ -16,20 +16,6 @@ namespace Personal_
         {
             InitializeComponent();
             Theme.Apply(this);
-
-            try
-            {
-                var repo = new AccessServiceMemberRepository();
-                var members = repo.GetAll();
-                foreach (var m in members)
-                {
-                    listBoxPersonnel.Items.Add($"{m.Rank} {m.FullName} - {m.MovementType}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не вдалося завантажити дані: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }
