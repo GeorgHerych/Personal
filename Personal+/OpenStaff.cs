@@ -15,6 +15,7 @@ namespace Personal_
         public OpenStaff()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

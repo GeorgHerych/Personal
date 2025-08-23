@@ -15,6 +15,7 @@ namespace Personal_
         public BasicData()
         {
             InitializeComponent();
+            Theme.Apply(this);
         }
     }
 }

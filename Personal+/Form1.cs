@@ -67,6 +67,7 @@ namespace Personal_
         public Form1()
         {
             InitializeComponent();
+            Theme.Apply(this);
             imageList.ColorDepth = ColorDepth.Depth32Bit;
             imageList.ImageSize = new Size(32, 32);
             listView1.LargeImageList = imageList;
