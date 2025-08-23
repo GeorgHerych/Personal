@@ -107,6 +107,14 @@ namespace Personal_
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var form = new PersonnelOpen())
+            {
+                form.ShowDialog();
+            }
+        }
+
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listView1.SelectedItems.Count > 0 && listView1.SelectedItems[0].Tag is FileItem item)
