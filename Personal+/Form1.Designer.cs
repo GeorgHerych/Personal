@@ -60,9 +60,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -335,17 +333,8 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1243, 577);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(127, 33);
-            this.button8.TabIndex = 30;
-            this.button8.Text = "Щоденний звіт";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // button9
-            // 
+            //
             this.button9.Location = new System.Drawing.Point(1243, 616);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(127, 33);
@@ -354,17 +343,8 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1243, 652);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(127, 33);
-            this.button10.TabIndex = 32;
-            this.button10.Text = "Наказ по СЧ";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // listBox1
-            // 
+            //
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 310);
             this.listBox1.Name = "listBox1";
@@ -441,9 +421,7 @@
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -521,9 +499,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
