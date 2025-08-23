@@ -28,6 +28,12 @@ namespace Personal_
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelReferenceNumber = new System.Windows.Forms.Label();
+            this.txtReferenceNumber = new System.Windows.Forms.TextBox();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.chkCompleted = new System.Windows.Forms.CheckBox();
+            this.chkForming = new System.Windows.Forms.CheckBox();
+            this.chkVacant = new System.Windows.Forms.CheckBox();
             this.labelDivision = new System.Windows.Forms.Label();
             this.cmbDivision = new System.Windows.Forms.ComboBox();
             this.labelAssociation = new System.Windows.Forms.Label();
@@ -48,105 +54,160 @@ namespace Personal_
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
             this.SuspendLayout();
             // 
+            // labelReferenceNumber
+            //
+            this.labelReferenceNumber.AutoSize = true;
+            this.labelReferenceNumber.Location = new System.Drawing.Point(12, 15);
+            this.labelReferenceNumber.Name = "labelReferenceNumber";
+            this.labelReferenceNumber.Size = new System.Drawing.Size(103, 13);
+            this.labelReferenceNumber.TabIndex = 0;
+            this.labelReferenceNumber.Text = "Довідковий номер:";
+            //
+            // txtReferenceNumber
+            //
+            this.txtReferenceNumber.Location = new System.Drawing.Point(121, 12);
+            this.txtReferenceNumber.Name = "txtReferenceNumber";
+            this.txtReferenceNumber.Size = new System.Drawing.Size(80, 20);
+            this.txtReferenceNumber.TabIndex = 1;
+            //
+            // labelStatus
+            //
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(207, 15);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(47, 13);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "Статус:";
+            //
+            // chkCompleted
+            //
+            this.chkCompleted.AutoSize = true;
+            this.chkCompleted.Location = new System.Drawing.Point(260, 14);
+            this.chkCompleted.Name = "chkCompleted";
+            this.chkCompleted.Size = new System.Drawing.Size(105, 17);
+            this.chkCompleted.TabIndex = 3;
+            this.chkCompleted.Text = "Укомплектовано";
+            this.chkCompleted.UseVisualStyleBackColor = true;
+            //
+            // chkForming
+            //
+            this.chkForming.AutoSize = true;
+            this.chkForming.Location = new System.Drawing.Point(371, 14);
+            this.chkForming.Name = "chkForming";
+            this.chkForming.Size = new System.Drawing.Size(82, 17);
+            this.chkForming.TabIndex = 4;
+            this.chkForming.Text = "Формується";
+            this.chkForming.UseVisualStyleBackColor = true;
+            //
+            // chkVacant
+            //
+            this.chkVacant.AutoSize = true;
+            this.chkVacant.Location = new System.Drawing.Point(459, 14);
+            this.chkVacant.Name = "chkVacant";
+            this.chkVacant.Size = new System.Drawing.Size(74, 17);
+            this.chkVacant.TabIndex = 5;
+            this.chkVacant.Text = "Вакантно";
+            this.chkVacant.UseVisualStyleBackColor = true;
+            //
             // labelDivision
-            // 
+            //
             this.labelDivision.AutoSize = true;
-            this.labelDivision.Location = new System.Drawing.Point(12, 15);
+            this.labelDivision.Location = new System.Drawing.Point(12, 45);
             this.labelDivision.Name = "labelDivision";
             this.labelDivision.Size = new System.Drawing.Size(58, 13);
-            this.labelDivision.TabIndex = 0;
+            this.labelDivision.TabIndex = 6;
             this.labelDivision.Text = "Дивізіон:";
-            // 
+            //
             // cmbDivision
-            // 
+            //
             this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDivision.FormattingEnabled = true;
-            this.cmbDivision.Location = new System.Drawing.Point(76, 12);
+            this.cmbDivision.Location = new System.Drawing.Point(76, 42);
             this.cmbDivision.Name = "cmbDivision";
             this.cmbDivision.Size = new System.Drawing.Size(121, 21);
-            this.cmbDivision.TabIndex = 1;
-            // 
+            this.cmbDivision.TabIndex = 7;
+            //
             // labelAssociation
-            // 
+            //
             this.labelAssociation.AutoSize = true;
-            this.labelAssociation.Location = new System.Drawing.Point(203, 15);
+            this.labelAssociation.Location = new System.Drawing.Point(203, 45);
             this.labelAssociation.Name = "labelAssociation";
             this.labelAssociation.Size = new System.Drawing.Size(74, 13);
-            this.labelAssociation.TabIndex = 2;
+            this.labelAssociation.TabIndex = 8;
             this.labelAssociation.Text = "Об'єднання:";
-            // 
+            //
             // cmbAssociation
-            // 
+            //
             this.cmbAssociation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAssociation.FormattingEnabled = true;
-            this.cmbAssociation.Location = new System.Drawing.Point(283, 12);
+            this.cmbAssociation.Location = new System.Drawing.Point(283, 42);
             this.cmbAssociation.Name = "cmbAssociation";
             this.cmbAssociation.Size = new System.Drawing.Size(121, 21);
-            this.cmbAssociation.TabIndex = 3;
-            // 
+            this.cmbAssociation.TabIndex = 9;
+            //
             // labelManagement
-            // 
+            //
             this.labelManagement.AutoSize = true;
-            this.labelManagement.Location = new System.Drawing.Point(410, 15);
+            this.labelManagement.Location = new System.Drawing.Point(410, 45);
             this.labelManagement.Name = "labelManagement";
             this.labelManagement.Size = new System.Drawing.Size(72, 13);
-            this.labelManagement.TabIndex = 4;
+            this.labelManagement.TabIndex = 10;
             this.labelManagement.Text = "Управління:";
-            // 
+            //
             // cmbManagement
-            // 
+            //
             this.cmbManagement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbManagement.FormattingEnabled = true;
-            this.cmbManagement.Location = new System.Drawing.Point(488, 12);
+            this.cmbManagement.Location = new System.Drawing.Point(488, 42);
             this.cmbManagement.Name = "cmbManagement";
             this.cmbManagement.Size = new System.Drawing.Size(121, 21);
-            this.cmbManagement.TabIndex = 5;
-            // 
+            this.cmbManagement.TabIndex = 11;
+            //
             // labelUnit
-            // 
+            //
             this.labelUnit.AutoSize = true;
-            this.labelUnit.Location = new System.Drawing.Point(615, 15);
+            this.labelUnit.Location = new System.Drawing.Point(615, 45);
             this.labelUnit.Name = "labelUnit";
             this.labelUnit.Size = new System.Drawing.Size(59, 13);
-            this.labelUnit.TabIndex = 6;
+            this.labelUnit.TabIndex = 12;
             this.labelUnit.Text = "Підрозділ:";
-            // 
+            //
             // cmbUnit
-            // 
+            //
             this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(680, 12);
+            this.cmbUnit.Location = new System.Drawing.Point(680, 42);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(121, 21);
-            this.cmbUnit.TabIndex = 7;
-            // 
+            this.cmbUnit.TabIndex = 13;
+            //
             // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(807, 10);
+            //
+            this.btnPrint.Location = new System.Drawing.Point(807, 40);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 8;
+            this.btnPrint.TabIndex = 14;
             this.btnPrint.Text = "Друк";
             this.btnPrint.UseVisualStyleBackColor = true;
-            // 
+            //
             // labelSearch
-            // 
+            //
             this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(888, 15);
+            this.labelSearch.Location = new System.Drawing.Point(888, 45);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(102, 13);
-            this.labelSearch.TabIndex = 9;
+            this.labelSearch.TabIndex = 15;
             this.labelSearch.Text = "Пошуковий запит:";
-            // 
+            //
             // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(996, 12);
+            //
+            this.txtSearch.Location = new System.Drawing.Point(996, 42);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 20);
-            this.txtSearch.TabIndex = 10;
-            // 
+            this.txtSearch.TabIndex = 16;
+            //
             // dataGridViewStaff
-            // 
+            //
             this.dataGridViewStaff.AllowUserToAddRows = false;
             this.dataGridViewStaff.AllowUserToDeleteRows = false;
             this.dataGridViewStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -159,11 +220,11 @@ namespace Personal_
             this.RankColumn,
             this.NameColumn,
             this.StatusColumn});
-            this.dataGridViewStaff.Location = new System.Drawing.Point(15, 50);
+            this.dataGridViewStaff.Location = new System.Drawing.Point(15, 80);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.ReadOnly = true;
-            this.dataGridViewStaff.Size = new System.Drawing.Size(1181, 499);
-            this.dataGridViewStaff.TabIndex = 11;
+            this.dataGridViewStaff.Size = new System.Drawing.Size(1181, 469);
+            this.dataGridViewStaff.TabIndex = 17;
             // 
             // NumberColumn
             // 
@@ -217,6 +278,12 @@ namespace Personal_
             this.Controls.Add(this.labelAssociation);
             this.Controls.Add(this.cmbDivision);
             this.Controls.Add(this.labelDivision);
+            this.Controls.Add(this.chkVacant);
+            this.Controls.Add(this.chkForming);
+            this.Controls.Add(this.chkCompleted);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.txtReferenceNumber);
+            this.Controls.Add(this.labelReferenceNumber);
             this.Name = "OpenStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Штат";
@@ -227,6 +294,12 @@ namespace Personal_
 
         #endregion
 
+        private System.Windows.Forms.Label labelReferenceNumber;
+        private System.Windows.Forms.TextBox txtReferenceNumber;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.CheckBox chkCompleted;
+        private System.Windows.Forms.CheckBox chkForming;
+        private System.Windows.Forms.CheckBox chkVacant;
         private System.Windows.Forms.Label labelDivision;
         private System.Windows.Forms.ComboBox cmbDivision;
         private System.Windows.Forms.Label labelAssociation;
