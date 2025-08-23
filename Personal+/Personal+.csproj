@@ -90,12 +90,6 @@
       <DependentUpon>ChangesOpen.cs</DependentUpon>
     </Compile>
     <Compile Include="ChatMessage.cs" />
-    <Compile Include="DailyReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DailyReport.Designer.cs">
-      <DependentUpon>DailyReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dictionary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +125,6 @@
     </Compile>
     <Compile Include="OpenStaff.Designer.cs">
       <DependentUpon>OpenStaff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonnelOpen.cs">
       <SubType>Form</SubType>
