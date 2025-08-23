@@ -145,6 +145,7 @@
     <Compile Include="SeedData.cs" />
     <Compile Include="User.cs" />
     <Compile Include="ServiceMember.cs" />
+    <Compile Include="Theme.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
