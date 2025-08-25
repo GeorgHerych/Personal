@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Personal_
 {
     /// <summary>
-    /// Represents a basic record about a service member. This is a minimal
-    /// model used for demonstrating how data could be stored.
-    /// It can be extended with additional fields as needed.
+    /// Represents a basic record about a service member. This model mirrors
+    /// the columns displayed on the KTVP form and can be extended with
+    /// additional fields as needed.
     /// </summary>
     public class ServiceMember
     {
@@ -14,14 +14,29 @@ namespace Personal_
         public int Id { get; set; }
 
         /// <summary>
+        /// Position held by the service member.
+        /// </summary>
+        public string Position { get; set; }
+
+        /// <summary>
         /// Military rank.
         /// </summary>
         public string Rank { get; set; }
 
         /// <summary>
-        /// Full name (ПІБ).
+        /// Last name (Прізвище).
         /// </summary>
-        public string FullName { get; set; }
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// First name (Ім'я).
+        /// </summary>
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Middle name (По батькові).
+        /// </summary>
+        public string MiddleName { get; set; }
 
         /// <summary>
         /// Type of movement (тип руху).
