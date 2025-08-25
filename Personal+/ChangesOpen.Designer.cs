@@ -236,6 +236,9 @@ namespace Personal_
             this.grpDetails.Size = new System.Drawing.Size(960, 220);
             this.grpDetails.TabIndex = 10;
             this.grpDetails.TabStop = false;
+            this.grpDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Left) |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // labelDIBS
             // 
@@ -610,6 +613,8 @@ namespace Personal_
             this.labelPrevUnit.Size = new System.Drawing.Size(86, 13);
             this.labelPrevUnit.TabIndex = 44;
             this.labelPrevUnit.Text = "Попередня в/ч";
+            this.labelPrevUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // txtPrevUnit
             // 
@@ -617,6 +622,8 @@ namespace Personal_
             this.txtPrevUnit.Name = "txtPrevUnit";
             this.txtPrevUnit.Size = new System.Drawing.Size(150, 20);
             this.txtPrevUnit.TabIndex = 45;
+            this.txtPrevUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // labelNewUnit
             // 
@@ -626,6 +633,8 @@ namespace Personal_
             this.labelNewUnit.Size = new System.Drawing.Size(60, 13);
             this.labelNewUnit.TabIndex = 46;
             this.labelNewUnit.Text = "Нова в/ч";
+            this.labelNewUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // txtNewUnit
             // 
@@ -633,6 +642,8 @@ namespace Personal_
             this.txtNewUnit.Name = "txtNewUnit";
             this.txtNewUnit.Size = new System.Drawing.Size(150, 20);
             this.txtNewUnit.TabIndex = 47;
+            this.txtNewUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // labelAttachment
             // 
@@ -642,6 +653,8 @@ namespace Personal_
             this.labelAttachment.Size = new System.Drawing.Size(46, 13);
             this.labelAttachment.TabIndex = 48;
             this.labelAttachment.Text = "Припис";
+            this.labelAttachment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // cmbAttachment
             // 
@@ -650,6 +663,8 @@ namespace Personal_
             this.cmbAttachment.Name = "cmbAttachment";
             this.cmbAttachment.Size = new System.Drawing.Size(150, 21);
             this.cmbAttachment.TabIndex = 49;
+            this.cmbAttachment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // listBoxChanges
             // 
@@ -658,6 +673,10 @@ namespace Personal_
             this.listBoxChanges.Name = "listBoxChanges";
             this.listBoxChanges.Size = new System.Drawing.Size(960, 238);
             this.listBoxChanges.TabIndex = 11;
+            this.listBoxChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Bottom) |
+                System.Windows.Forms.AnchorStyles.Left) |
+                System.Windows.Forms.AnchorStyles.Right)));
             // 
             // ChangesOpen
             // 
