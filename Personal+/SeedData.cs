@@ -19,6 +19,22 @@ namespace Personal_
             CreateUser("yura", "admin123", true);
         }
 
+        public static void SeedServiceMembers()
+        {
+            using (var db = new AppDbContext())
+            {
+                if (!db.ServiceMembers.Any())
+                {
+                    db.ServiceMembers.AddRange(new[]
+                    {
+                        new ServiceMember { Position = "Командир відділення", Rank = "Сержант", LastName = "Іванов", FirstName = "Іван", MiddleName = "Іванович", MovementType = "Прибуття" },
+                        new ServiceMember { Position = "Стрілець", Rank = "Солдат", LastName = "Петренко", FirstName = "Петро", MiddleName = "Петрович", MovementType = "Вибуття" }
+                    });
+                    db.SaveChanges();
+                }
+            }
+        }
+
         private static void CreateUser(string login, string plainPassword, bool isAdmin = false)
         {
             using (var db = new AppDbContext())
