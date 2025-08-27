@@ -176,6 +176,7 @@ namespace Personal_
             this.btnCreate.TabIndex = 15;
             this.btnCreate.Text = "Створити";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnDone
             // 
@@ -185,6 +186,7 @@ namespace Personal_
             this.btnDone.TabIndex = 16;
             this.btnDone.Text = "Виконані";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnAdd
             // 
@@ -194,6 +196,7 @@ namespace Personal_
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Додати";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnExit
             // 
@@ -203,6 +206,7 @@ namespace Personal_
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "Вихід";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // dataGridMembers
             // 
@@ -294,6 +298,7 @@ namespace Personal_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "KtvpForm";
             this.Text = "КТВП";
+            this.Load += new System.EventHandler(this.KtvpForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,6 +18,7 @@ namespace Personal_
             try
             {
                 SeedData.SeedUsers();
+                SeedData.SeedServiceMembers();
             }
             catch (Exception ex)
             {
